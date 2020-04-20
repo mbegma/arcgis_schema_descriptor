@@ -5,7 +5,7 @@
 # Author: mbegma
 # Create data: 13.04.2020
 # Description: 
-# Copyright: (c) Дата+, 2020
+# Copyright:
 # -----------------------------------------------------
 import arcpy
 import json
@@ -28,7 +28,7 @@ def get_leveled_text_line(text, level=0):
 def add_message(_text, _type=0, _level=0):
     is_process = True
     if is_process:
-        type_msg = ['INFO', 'ERROR', 'WARNING']
+        type_msg = [u'INFO', u'ERROR', u'WARNING']
         msg = u'{0} | {1} > {2}'.format(type_msg[_type],
                                         datetime.utcnow(),
                                         get_leveled_text_line(_text, _level))

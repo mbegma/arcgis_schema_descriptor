@@ -5,7 +5,7 @@
 # Author: mbegma
 # Create data: 13.04.2020
 # Description: 
-# Copyright: (c) Дата+, 2020
+# Copyright:
 # -----------------------------------------------------
 import arcpy
 from tool.descriptor import Descriptor
