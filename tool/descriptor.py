@@ -54,7 +54,7 @@ def get_fields_data(fields_list, use_exclusion_fields_list=True):
 
 
 class Descriptor:
-    def __init__(self, workspace, output_place, output_format='CSV', sort_fields=False):
+    def __init__(self, workspace, output_place, output_format, sort_fields=False):
         self.features_data_dict = {}
         self.workspace = workspace
         self.output_place = output_place
@@ -105,6 +105,7 @@ class Descriptor:
         for fc in fc_list:
             add_message(u'get info about: {0}'.format(fc))
             fc_name = u'{0}{1}{2}'.format(self.workspace, sep, fc)
+            add_message(u'fc name: {0}'.format(fc_name))
             desc = arcpy.Describe(fc_name)
             if desc.dataType == FC:
                 add_message(u'process Feature Classes')
@@ -125,6 +126,7 @@ class Descriptor:
         for table in table_list:
             add_message(u'get info about: {0}'.format(table))
             table_name = u'{0}{1}{2}'.format(self.workspace, sep, table)
+            add_message(u'fc name: {0}'.format(table_name))
             desc = arcpy.Describe(table_name)
             if desc.dataType == TABLE:
                 fields = arcpy.ListFields(table_name)
