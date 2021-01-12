@@ -14,11 +14,11 @@ from tool.descriptor import Descriptor
 def main():
     arcpy.AddMessage(u'Starting main method')
     # DEBUG
-    workspace = ur'C:\Max\Work\Maps\temp\test_01.gdb'
-    output_place = ur'c:\PyProjects\test_tasks\scratch'
-    # output_format = 'CSV'  # 'CSV'
-    output_format = 'JSON'
-    sort_fields = True
+    workspace = ur'C:\Work\2020\ПКК\CS\RAYON_CS.gdb'
+    output_place = ur'C:\Work\2020\ПКК'
+    output_format = u'CSV'  # 'CSV'
+    # output_format = 'JSON'
+    sort_fields = False
     cl = Descriptor(workspace=workspace, output_place=output_place,
                     output_format=output_format, sort_fields=sort_fields)
     try:
@@ -28,7 +28,7 @@ def main():
     except Exception as err:
         arcpy.AddMessage(str(err.args))
     finally:
-        arcpy.AddMessage('finish')
+        arcpy.AddMessage(u'finish')
 
 
 if __name__ == "__main__":
